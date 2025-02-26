@@ -1,0 +1,162 @@
+:root {
+  --primary-color: #6C63FF;
+  --secondary-color: #2A2A72;
+  --accent-color: #00D4FF;
+  --background-color: #0A192F;
+  --text-color: #E6F1FF;
+  --card-background: rgba(255, 255, 255, 0.05);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    var(--background-color) 0%,
+    var(--secondary-color) 100%
+  );
+}
+
+.container {
+  background: var(--card-background);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+.container > h1 {
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+  font-size: 2.5rem;
+  text-align: center;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.container div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.container input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.container input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+}
+
+.container input::placeholder {
+  color: rgba(230, 241, 255, 0.5);
+  font-size: 0.875rem;
+}
+
+button {
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+span {
+  text-align: center;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Animation keyframes for loading effects */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .container > h1 {
+    font-size: 2rem;
+  }
+}
